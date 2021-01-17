@@ -1,0 +1,120 @@
+<!-- Assignment 1 - 19/01/2021 -->
+<!-- Author: Jaime Cordero -->
+<!-- Title: Schneehutte -->
+<!-- ETSAM Master thesis -->
+
+<!DOCTYPE html> 
+<html>
+
+    <!-- everything that isn't content -->
+    <head>
+        <meta charset="utf-8">
+        <title>SCHNEEHUTTE</title>
+
+        <!-- css -->
+        <style>
+
+            .text:hover {
+                font-style:oblique; font-weight:bold; background-color: black; color: white;
+            }
+                      
+            h1 {font-family: 'Courier New', Courier, monospace; font-size:30px; font-style: normal; color: black}
+            
+            p {font-family: 'Courier New', Courier, monospace}
+                        
+            img {
+                width: 600px; /* set image width */
+            }
+
+            img:hover { 
+                border: solid 2px black;
+            }
+
+            .caption {
+                display: none; /* start with caption hidden */
+                font-style: italic;
+                font-size:10px;
+            }
+        </style>
+    </head>
+
+    <!-- content -->
+    <body>
+        <!-- some text and links -->
+        <h1 class="text"> SCHNEEHUTTE </h1>
+        
+        <div>
+            <p class="text">
+            Schneehutte is a project located in Innsbruck designed to regenerate soil that has been degradated because of skiing.
+            </p>
+        </div>
+
+        <div class="container">
+            <!-- an image -->
+            <img class="resImage"
+                 alt="Soil degradation in Nordkette"
+                 src="images/geo.png">
+
+            <!-- a caption -->
+            <p class="caption">
+                 Ski causes a degradation on the soil, removing the first important soil layer of humus; which prevents vegetation from growing.
+            </p>
+        </div>
+
+        <div class="container">
+            <img class="resImage"
+                 alt="Plan through time"
+                 src="images/relacion.gif">
+        
+            <!-- a caption -->
+            <p class="caption">
+                To regenerate the soil on the slopes, I developed a master plan, where the designed pavillions are moved around the slopes after keeping preserved that part of soil during one year.
+            </p>
+        </div>
+
+        <div class="container">
+            <img class="resImage"
+             alt="Catalogue of temporary pavillions to regenerate soil"
+             src="images/catalogue.jpg">
+            
+            <!-- a caption -->
+            <p class="caption">
+                The pavillions are parametrically designed to be able to get adapted to the slope and the irregular terrain. 
+            </p>
+        </div>
+
+        <div class="container">
+            <img class="resImage"
+                 alt="Example of one pavillion"
+                 src="images/section.png">
+            
+            <!-- a caption -->
+            <p class="caption">
+                 The pavillions are built with extensible bars to be able to shorten and lenghten them, aswell as temporary foundation.
+            </p>
+        </div>
+
+        <!-- javascript -->
+        <script type="application/javascript">
+            
+            // get reference to html elements
+            const images = document.getElementsByClassName('resImage')
+
+            for (i = 0; i < images.length; i++) {
+                const img = images[i]
+                img.addEventListener('mouseover', function() {
+                    img.parentNode.querySelector('p').style.display = 'block'
+                    // img.border.color = 'black' // -- border color with css instead of with javascript, how to do it with javascript?
+                }, false)
+                
+                img.addEventListener('mouseout', function() {
+                    img.parentNode.querySelector('p').style.display = 'none'
+                    // img.border.color = 'black' // -- border color with css instead of with javascript, how to do it with javascript?
+                }, false)
+            }
+                                  
+        </script>
+
+        <!-- the end -->
+    </body>
+</html>
